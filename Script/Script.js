@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- 1. FUNCIONALIDAD DE LA BARRA DE BÚSQUEDA (GLOBAL) ---
+    // Barra de Navegación
     const searchForm = document.getElementById('searchForm');
     if (searchForm) {
         searchForm.addEventListener('submit', function(event) {
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 4. FUNCIONALIDAD FORMULARIO DE REGISTRO (signup.html) ---
+    // Registro del Formulario
     const signupForm = document.getElementById('signupForm');
 
     if (signupForm) {
@@ -176,4 +176,46 @@ document.addEventListener('DOMContentLoaded', function() {
             signupForm.reset();
         });
     }
+
+
+    // js/main.js
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (tu código anterior para la búsqueda, etc.)
+
+
+    const noticias = [
+        {
+            titulo: "La NASA descubre un nuevo planeta similar a la Tierra",
+            img: "/Images/img3.png",
+            texto: "En un descubrimiento histórico, los astrónomos de la NASA han confirmado la existencia de Kepler-186f, un planeta del tamaño de la Tierra que orbita una estrella distante en la zona habitable. Este hallazgo aumenta las esperanzas de encontrar vida más allá de nuestro sistema solar. El planeta se encuentra a unos 500 años luz de distancia y es el primer planeta validado de tamaño terrestre que orbita otra estrella en la zona donde podría existir agua líquida en la superficie."
+        },
+        {
+            titulo: "Avances en la inteligencia artificial generativa",
+            img: "/Images/img1.png", 
+            texto: "Un nuevo modelo de inteligencia artificial llamado 'Synapse-7' ha demostrado capacidades sin precedentes para generar texto, imágenes y música coherentes y de alta calidad. Los investigadores creen que esta tecnología podría revolucionar industrias creativas y científicas, aunque también plantean importantes debates éticos sobre su uso y regulación. El modelo fue entrenado con una base de datos masiva que abarca siglos de conocimiento humano."
+        },
+        {
+            titulo: "Campeón mundial de ajedrez retiene su título",
+            img: "/Images/img2.png",
+            texto: "El gran maestro Magnus Carlsen ha defendido con éxito su título de campeón mundial de ajedrez en un emocionante desempate a partidas rápidas contra su rival, Ian Nepomniachtchi. El encuentro, que duró varias semanas, culminó con una demostración de brillantez táctica por parte de Carlsen, quien aseguró su quinto campeonato mundial consecutivo, consolidando su legado como uno de los mejores jugadores de todos los tiempos."
+        }
+    ];
+
+    const botonesNoticia = document.querySelectorAll('.btn-leer-noticia');
+
+    
+    botonesNoticia.forEach((boton, index) => {
+        boton.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const noticia = noticias[index];
+
+            const tituloCodificado = encodeURIComponent(noticia.titulo);
+            const imgCodificada = encodeURIComponent(noticia.img);
+            const textoCodificado = encodeURIComponent(noticia.texto);
+            
+            window.location.href = `noticia-detalle.html?titulo=${tituloCodificado}&img=${imgCodificada}&texto=${textoCodificado}`;
+        });
+    });
+});
 });
