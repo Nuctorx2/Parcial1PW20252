@@ -177,10 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-
-    // js/main.js
 document.addEventListener('DOMContentLoaded', function() {
-    // ... (tu código anterior para la búsqueda, etc.)
 
 
     const noticias = [
