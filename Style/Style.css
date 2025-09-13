@@ -1,0 +1,26 @@
+/* --- Estilos para la Barra de Navegación --- */
+.navbar .nav-item .nav-link {
+    font-size: 1.6rem;
+}
+
+/* --- Estilos para las Tarjetas de Noticias --- */
+.card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* --- Estilos para la Página de Admin/Login --- */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+/* --- Estilos para el Carrusel del Equipo --- */
+.team-photo {
+    width: 400px;      
+    height: 400px;
+    object-fit: cover;
+}
